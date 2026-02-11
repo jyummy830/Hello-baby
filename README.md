@@ -10,7 +10,16 @@
 📱 全终端适配：针对移动端优化，支持 iPhone 刘海屏 (safe-area-inset)，手势流畅。
 💾 KV 持久化：利用 Cloudflare KV 存储聊天记录，并内置双重校验机制确保数据不丢失。
 🛡️ 简易鉴权：内置访问密码机制，防止被陌生人随意刷屏。
+
+
+
+
 📦 部署教程
+
+
+
+
+
 前置条件
 注册并登录 Cloudflare Dashboard。
 在左侧菜单选择 Workers & Pages。
@@ -36,6 +45,11 @@ KV Namespace: 选择你在步骤一中创建的命名空间。
 删除默认的 worker.js 内容。
 将本仓库 worker.js 的代码完整粘贴进去。
 点击右上角 Deploy。
+
+
+
+
+
 🔑 默认配置
 代码中的默认凭证如下，你可以在 HTML_CONTENT 里的 <script> 标签中修改这些常量：
 📱 使用说明
@@ -51,6 +65,12 @@ Runtime: Cloudflare Workers (V8 Engine)
 Database: Cloudflare Workers KV
 Frontend: Vanilla HTML/CSS/JS (无任何框架依赖)
 Style: CSS Variables + Flexbox
+
+
+
+
+
+
 ⚠️ 注意事项
 KV 最终一致性: Cloudflare KV 是全球分布式系统，写入后可能需要最多 60 秒在全球所有节点同步。本代码通过 LocalStorage 和前端轮询校验尽量掩盖了这一延迟，但在不同地区的用户之间可能会有轻微的延迟差异。
 安全性: 这是一个演示性质的聊天室。虽然设有密码，但并未做高强度的加密或鉴权。请勿用于传输敏感信息。
