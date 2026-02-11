@@ -23,16 +23,19 @@
 前置条件
 注册并登录 Cloudflare Dashboard。
 在左侧菜单选择 Workers & Pages。
+
 步骤一：创建 KV 命名空间
 聊天记录需要存储在 KV 中。
 进入 Workers & Pages -> KV。
 点击 "Create a Namespace"。
 输入名称（例如：HACKER_CHAT_DB），点击 Add。
 记住这个 Variable name (变量名)，后续配置会用到。
+
 步骤二：创建 Worker
 点击 "Create Application" -> "Create Worker"。
 给 Worker 起个名字（例如：hacker-terminal），点击 Deploy。
 部署成功后，点击 "Edit code" 进入编辑界面。
+
 步骤三：绑定 KV
 在代码编辑器左侧，点击 Settings (或者直接去 Worker 详情页的 Settings -> Variables)。
 找到 KV Namespace Bindings 区域。
@@ -40,6 +43,7 @@
 Variable name: 输入 CHAT_DB (必须与代码中的 env.CHAT_DB 一致)。
 KV Namespace: 选择你在步骤一中创建的命名空间。
 保存并部署。
+
 步骤四：粘贴代码
 回到 Worker 的 Edit Code 界面。
 删除默认的 worker.js 内容。
