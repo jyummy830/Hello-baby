@@ -2,12 +2,18 @@
 ☠️ 终极黑客终端聊天 room (V12)
 一个基于 Cloudflare Workers 和 KV 构建的极简、极速、黑客风格的即时聊天室。
 无需后端服务器，完全运行在 Cloudflare 边缘网络。
+
 ✨ 特性
 🚀 V12 极速响应：针对 KV 延迟进行了深度优化，刷新瞬间即可通过 LocalStorage 显示历史记录。
+
 🧠 智能轮询：打字时自动暂停后台轮询，停止输入 2 秒后自动恢复，节省资源并提升性能。
+
 ✨ Markdown 简易渲染：支持 **粗体** 和 ~~删除线~~ 语法。
+
 🌗 双色主题：内置极客黑（默认）和护眼白两种主题，一键切换。
+
 📱 全终端适配：针对移动端优化，支持 iPhone 刘海屏 (safe-area-inset)，手势流畅。
+
 💾 KV 持久化：利用 Cloudflare KV 存储聊天记录，并内置双重校验机制确保数据不丢失。
 🛡️ 简易鉴权：内置访问密码机制，防止被陌生人随意刷屏。
 
@@ -56,14 +62,17 @@ KV Namespace: 选择你在步骤一中创建的命名空间。
 
 🔑 默认配置
 代码中的默认凭证如下，你可以在 HTML_CONTENT 里的 <script> 标签中修改这些常量：
+
 📱 使用说明
 访问部署后的 Worker 域名（例如 https://hacker-terminal.your-subdomain.workers.dev）。
 输入默认账号密码登录。
 发送消息：输入文字，回车或点击发送按钮。
+
 格式化：
 输入 **重要** 显示为 粗体。
 输入 ~~废弃~~ 显示为 删除线。
 清空记录：点击顶部 "☢ 清空"，输入管理员密码 8888 即可销毁 KV 中的所有数据。
+
 🛠️ 技术栈
 Runtime: Cloudflare Workers (V8 Engine)
 Database: Cloudflare Workers KV
